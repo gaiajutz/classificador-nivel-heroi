@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Classificador de Nível de Herói</title>
+</head>
+<body>
+    <main>
+        <header>
+            <picture>
+                <source media="(min-width:818px)" srcset="images/header.gif" id="banner">
+                <source media="(max-width:817px)" srcset="images/mobile-header.gif" width="100%">
+                <img src="images/header.gif" alt="Banner com a ilustração de um mago e um d12 com o texto Classificador de Nível de Herói" style="width:auto;">
+            </picture>
+        </header>
+        <section id="first-div">
+            <h1><strong>Boas-vindas</strong> <br> ao Classificador <br> de Nível de Herói!</h1>
+            <p>Esta página foi desenvolvida para o desafio de JavaScript do
+                <strong>Bootcamp de Front-end da DIO.me 2025</strong></p>
+        </section>
+        <br>
+        <section id="input-section">
+            <span id="first-input">
+                <h2><strong>Digite o nome do seu herói</strong></h2>
+                <input type="text" id="hero-name" class="type-bar" placeholder="Digitar">
+            </span>
+            <span id="second-input">
+                <h2><strong>Digite o XP do seu herói</strong></h2>
+                <input type="text" id="hero-xp" class="type-bar" placeholder="Digitar">
+            </span>
+        <br><br>
+        </section>
+        <section id="button">
+            <button onclick="classificarHeroi()"><strong>Clique para exibir o resultado</strong></button>
+        </section>
+
+        <footer>
+            <p>Página desenvolvida por <strong>Gaia Jutz</strong> | Agosto de 2025 | github: gaiajutz</p>
+        </footer>
+    </main>
+</body>
+
+    <script>
+        function classificarHeroi() {
+        let nomeHeroi = document.getElementById("hero-name").value;
+        let xpHeroi = parseInt(document.getElementById("hero-xp").value);
+        let nivelHeroi;
+
+        if(!nomeHeroi || isNaN(xpHeroi)) {
+            alert("Por favor, preencha ambos os campos corretamente!")
+        }
+
+        // Conditions
+        if (xpHeroi <= 1000) {
+            nivelHeroi = "Ferro"
+        }
+        else if (xpHeroi <= 2000) {
+            nivelHeroi = "Bronze"
+        }
+        else if (xpHeroi <= 5000) {
+            nivelHeroi = "Prata"
+        }
+        else if (xpHeroi <= 7000) {
+            nivelHeroi = "Ouro"
+        }
+        else if (xpHeroi <= 8000) {
+            nivelHeroi = "Platina"
+        }
+        else if (xpHeroi <= 9000) {
+            nivelHeroi = "Ascendente"
+        }
+        else if (xpHeroi <= 10000) {
+            nivelHeroi = "Imortal"
+        }
+        else {
+            nivelHeroi = "Radiante"
+        }
+
+        alert("O herói ${nomeHeroi} está no nível ${nivelHeroi} com ${xpHeroi} de XP!");
+        }
+
+    </script>
+</html>
